@@ -1,0 +1,35 @@
+.applayout {
+    --nextui-fill-icons: var(--nextui-content3-foreground);
+    color: hsl(var(--nextui-content1-foreground));
+
+    background: hsl(var(--nextui-background));
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar main";
+    grid-template-columns: 256px 1fr;
+    grid-template-rows: max-content 1fr;
+    min-height: 100vh;
+}
+
+.applayout > main {
+    grid-area: main;
+}
+
+.applayout > header {
+    grid-area: header;
+}
+
+.applayout > aside {
+    grid-area: sidebar;
+}
+
+@media screen and (max-width:768px) {
+    .applayout {
+        position: relative;
+        grid-template-columns:1fr;
+        grid-template-areas:
+        "header"
+        "main";
+    }   
+}
